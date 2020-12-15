@@ -86,4 +86,39 @@ describe('recipe-lab routes', () => {
         });
       });
   });
+
+  it('should get a recipe by id using GET', async() => {
+    const recipe = await Recipe.insert({ 
+      name: 'mashed potatos', 
+      directions: [
+        'preheat oven to 375',
+        'mix ingredients',
+        'bake for 10 minutes',
+        'MASH THEM POTATOS!'
+      ] 
+    });
+
+    const res = await request(app)
+      .get(`/api/v1/recipes/${recipe.id}`);
+
+    expect(res.body).toEqual(recipe);
+  });
+
+  it('should delete a recipe by id using DELETE', async() => {
+    const recipe = await Recipe.insert({ 
+      name: 'mashed potatos', 
+      directions: [
+        'preheat oven to 375',
+        'mix ingredients',
+        'bake for 10 minutes',
+        'MASH THEM POTATOS!'
+      ] 
+    });
+
+    const res = await request(app)
+      .delete(`/api/v1/recipes/${recipe.id}`);
+
+    expect(res.body).toEqual(recipe);
+  });
+
 });
