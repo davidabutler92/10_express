@@ -109,4 +109,18 @@ describe('recipe-lab routes', () => {
     });
   });
 
+  it('should delete a log using DELETE', async() => {
+    const log = await Log.insert({
+      dateOfEvent: '12/05/2020',
+      notes: 'make recipe better',
+      rating: 5,
+      recipeId: recipe.id
+    });
+
+    const res = await request(app)
+      .delete(`/api/v1/logs/${log.id}`);
+
+    expect(log).toEqual(res.body);
+  });
+
 });
