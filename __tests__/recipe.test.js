@@ -59,7 +59,7 @@ describe('recipe-lab routes', () => {
         'mix ingredients',
         'put dough on cookie sheet',
         'bake for 10 minutes'
-      ],
+      ]
     });
 
     return request(app)
