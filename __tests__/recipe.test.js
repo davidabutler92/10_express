@@ -19,7 +19,8 @@ describe('recipe-lab routes', () => {
           'mix ingredients',
           'put dough on cookie sheet',
           'bake for 10 minutes'
-        ]
+        ],
+        ingredients: [{ 'name': 'something', 'amount': 'something else', 'measurement': '2cups' }]
       })
       .then(res => {
         expect(res.body).toEqual({
@@ -30,7 +31,8 @@ describe('recipe-lab routes', () => {
             'mix ingredients',
             'put dough on cookie sheet',
             'bake for 10 minutes'
-          ]
+          ],
+          ingredients: [{ 'name': 'something', 'amount': 'something else', 'measurement': '2cups' }]
         });
       });
   });
@@ -59,7 +61,8 @@ describe('recipe-lab routes', () => {
         'mix ingredients',
         'put dough on cookie sheet',
         'bake for 10 minutes'
-      ]
+      ],
+      ingredients: [{ 'name': 'something', 'amount': 'something else', 'measurement': '2cups' }]
     });
 
     return request(app)
@@ -71,7 +74,8 @@ describe('recipe-lab routes', () => {
           'mix ingredients',
           'put dough on cookie sheet',
           'bake for 10 minutes'
-        ]
+        ],
+        ingredients: [{ 'name': 'something', 'amount': 'something else', 'measurement': '2cups' }]
       })
       .then(res => {
         expect(res.body).toEqual({
@@ -82,7 +86,8 @@ describe('recipe-lab routes', () => {
             'mix ingredients',
             'put dough on cookie sheet',
             'bake for 10 minutes'
-          ]
+          ],
+          ingredients: [{ 'name': 'something', 'amount': 'something else', 'measurement': '2cups' }]
         });
       });
   });
@@ -95,7 +100,8 @@ describe('recipe-lab routes', () => {
         'mix ingredients',
         'bake for 10 minutes',
         'MASH THEM POTATOS!'
-      ] 
+      ],
+      ingredients: [{ 'name': 'something', 'amount': 'something else', 'measurement': '2cups' }]
     });
 
     const res = await request(app)
@@ -112,7 +118,8 @@ describe('recipe-lab routes', () => {
         'mix ingredients',
         'bake for 10 minutes',
         'MASH THEM POTATOS!'
-      ] 
+      ],
+      ingredients: [{ 'name': 'something', 'amount': 'something else', 'measurement': '2cups' }]
     });
 
     const res = await request(app)
